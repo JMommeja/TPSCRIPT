@@ -4,7 +4,7 @@ then
     echo "Le dossier Image n'existe pas!"
     exit 1
 else
-echo "ca marche wola" 
+echo "Dossier Images OK" 
 fi
 
 for FILE in ${@}

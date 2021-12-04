@@ -5,6 +5,6 @@ if [[ $? -eq 0 ]]; then
         echo "Internet ON"
         exit 0
 else
-        echo "Pas d'internet" 
-        exit 1
+        echo "Erreur, veillez vous connectez a internet" 
+        read 
 fi

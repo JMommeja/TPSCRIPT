@@ -1,23 +1,16 @@
-<<<<<<< HEAD
-echo "Bonjour, ce script permet de lancer le blog, pour cela nous avons besoin des droits d'admin velliez entrer votr mot de passe ou Wtrl + C pour arreter"
 
-
-
-if [ "$(whoami)" != "root" ]
-then
-  sudo -c ./util/InstallPython root
+if [ "$1" == "--help" ]; then
+  echo "Pour demarer ce programme vous aurez besoin d'une connection internet, et lancer le programme en SU (commande Sudo Start.bash)"
+  exit 0
 fi
 
+echo "Bonjour, ce script permet de lancer le blog, pour cela nous avons besoin des droits d'admin et une connection internet, 
+velliez entrer votr mot de passe ou faites Ctrl + C pour arreter"
 
+	 if [[ `id -u` -ne 0 ]] ; then echo " Vous n'etes pas en Super Admin relancer le script en faisant ''Sudo Start.Bash'' " ; read ; fi
+	 
+ python --version || echo "Installation de python3" apt update && apt install python3.8
 
-
-
-
-
-
-
-
->>>>>>> 9cd69c2612af42f03ad7c8fc0fc9826e07756e4e
  bash util/CheckIMG.bash images/cafe.jpeg images/corse.png images/capybara.jpeg images/poney.jpeg 
  bash util/CheckNetwork.bash
 
